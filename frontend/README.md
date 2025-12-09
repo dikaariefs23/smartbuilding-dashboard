@@ -1,6 +1,6 @@
 # Urbansolv Smart Building Dashboard
 
-Project ini adalah implementasi test case frontend Urbansolv untuk membangun halaman dashboard monitoring smart building menggunakan Next.js dan Tailwind CSS.
+Test case frontend Urbansolv untuk membangun halaman dashboard monitoring smart building menggunakan Next.js dan Tailwind CSS.
 
 ## Tech Stack
 
@@ -42,7 +42,7 @@ Project ini adalah implementasi test case frontend Urbansolv untuk membangun hal
 
 Halaman utama menampilkan:
 
-- Header dengan judul **"Urbansolv Smart Building Dashboard"** dan nama gedung (contoh: Gedung A) [file:3].
+- Header dengan judul **"Urbansolv Smart Building Dashboard"** dan nama gedung (contoh: Gedung A).
 - Tiga KPI cards:
   - Total konsumsi energi hari ini (kWh).
   - Rata-rata suhu ruangan (°C).
@@ -51,7 +51,7 @@ Halaman utama menampilkan:
   - Kolom: Nama Ruang, Lantai, Suhu, CO₂, Status (Normal / Warning / Alert).
   - Dropdown filter lantai, isi tabel menyesuaikan pilihan lantai.
   - Badge warna untuk status (hijau, kuning, merah).
-- Grafik tren konsumsi energi 24 jam terakhir menggunakan Recharts [file:3].
+- Grafik tren konsumsi energi 24 jam terakhir menggunakan Recharts.
 
 ### 2. 3D Map View
 
@@ -59,7 +59,7 @@ Halaman `/map` menampilkan:
 
 - Judul **"Urbansolv Smart Building - 3D View"**.
 - 3D box sederhana yang mewakili gedung dengan kontrol rotate/zoom menggunakan React Three Fiber.
-- Tombol untuk kembali ke dashboard utama [file:3].
+- Tombol untuk kembali ke dashboard utama.
 
 ## Struktur Folder
 
@@ -93,4 +93,3 @@ Dashboard utama:
 Halaman 3D Map:
 
 ![3D Map](./public/map.png)
-```
