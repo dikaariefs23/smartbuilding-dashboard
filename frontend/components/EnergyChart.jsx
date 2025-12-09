@@ -1,4 +1,5 @@
 "use client";
+
 import {
   LineChart,
   Line,
@@ -12,8 +13,8 @@ import { buildingData } from "@/lib/data";
 
 export default function EnergyChart() {
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h3 className="text-xl font-semibold mb-4">
+    <div className="bg-white rounded-lg shadow p-6 border border-slate-100">
+      <h3 className="text-xl font-semibold mb-4 text-slate-900">
         Tren Konsumsi Energi 24 Jam
       </h3>
       <ResponsiveContainer width="100%" height={300}>
@@ -22,12 +23,7 @@ export default function EnergyChart() {
           <XAxis dataKey="hour" />
           <YAxis />
           <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="kwh"
-            stroke="#3B82F6"
-            strokeWidth={3}
-          />
+          <Line type="monotone" dataKey="kwh" stroke="#3B82F6" strokeWidth={3} />
         </LineChart>
       </ResponsiveContainer>
     </div>

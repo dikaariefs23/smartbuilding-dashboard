@@ -1,32 +1,31 @@
 "use client";
+
 import { useState } from "react";
 import { buildingData } from "@/lib/data";
 
 export default function RoomsTable() {
-  const [selectedFloor, setSelectedFloor] = useState<string>("all");
+  const [selectedFloor, setSelectedFloor] = useState("all");
   const floors = ["all", 1, 2, 3];
 
   const filteredRooms =
     selectedFloor === "all"
       ? buildingData.rooms
-      : buildingData.rooms.filter(
-          (room) => room.floor === Number(selectedFloor)
-        );
+      : buildingData.rooms.filter((room) => room.floor === Number(selectedFloor));
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     if (status === "Normal") return "bg-green-100 text-green-800";
     if (status === "Warning") return "bg-yellow-100 text-yellow-800";
     return "bg-red-100 text-red-800";
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 mb-8">
+    <div className="bg-white rounded-lg shadow p-6 mb-8 border border-slate-100">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-semibold">Daftar Ruangan</h3>
+        <h3 className="text-xl font-semibold text-slate-900">Daftar Ruangan</h3>
         <select
           value={selectedFloor}
           onChange={(e) => setSelectedFloor(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="px-3 py-2 border border-slate-300 bg-white text-sm text-slate-700 rounded-md"
         >
           {floors.map((floor) => (
             <option key={floor} value={floor}>
@@ -37,39 +36,39 @@ export default function RoomsTable() {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 text-sm">
-          <thead className="bg-gray-50">
+        <table className="min-w-full divide-y divide-slate-200 text-sm">
+          <thead className="bg-slate-50">
             <tr>
-              <th className="px-4 py-2 text-left font-medium text-gray-500 uppercase">
+              <th className="px-4 py-2 text-left font-medium text-slate-500 uppercase">
                 Nama Ruang
               </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-500 uppercase">
+              <th className="px-4 py-2 text-left font-medium text-slate-500 uppercase">
                 Lantai
               </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-500 uppercase">
+              <th className="px-4 py-2 text-left font-medium text-slate-500 uppercase">
                 Suhu
               </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-500 uppercase">
-                CO2
+              <th className="px-4 py-2 text-left font-medium text-slate-500 uppercase">
+                CO₂
               </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-500 uppercase">
+              <th className="px-4 py-2 text-left font-medium text-slate-500 uppercase">
                 Status
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-slate-100">
             {filteredRooms.map((room) => (
               <tr key={room.id}>
-                <td className="px-4 py-2 whitespace-nowrap font-medium text-gray-900">
+                <td className="px-4 py-2 whitespace-nowrap font-medium text-slate-900">
                   {room.name}
                 </td>
-                <td className="px-4 py-2 whitespace-nowrap text-gray-600">
+                <td className="px-4 py-2 whitespace-nowrap text-slate-600">
                   {room.floor}
                 </td>
-                <td className="px-4 py-2 whitespace-nowrap text-gray-600">
+                <td className="px-4 py-2 whitespace-nowrap text-slate-600">
                   {room.temperature}°C
                 </td>
-                <td className="px-4 py-2 whitespace-nowrap text-gray-600">
+                <td className="px-4 py-2 whitespace-nowrap text-slate-600">
                   {room.co2} ppm
                 </td>
                 <td className="px-4 py-2 whitespace-nowrap">

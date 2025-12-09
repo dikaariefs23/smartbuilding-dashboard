@@ -15,13 +15,13 @@ function BuildingBox() {
 
 export default function MapPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4">
       <div className="max-w-4xl w-full mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
             Urbansolv Smart Building - 3D View
           </h1>
-          <p className="text-gray-600">
+          <p className="text-slate-600">
             Tampilan 3D sederhana gedung sebagai fitur opsional map.
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function MapPage() {
         <div className="flex justify-center md:justify-end">
           <Link
             href="/"
-            className="inline-flex items-center px-4 py-2 rounded-md bg-gray-200 text-gray-800 text-sm font-medium hover:bg-gray-300 transition"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-slate-200 text-slate-800 text-sm font-medium hover:bg-slate-300 transition"
           >
             ← Kembali ke Dashboard
           </Link>

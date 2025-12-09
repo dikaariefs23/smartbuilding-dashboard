@@ -1,44 +1,96 @@
 # Urbansolv Smart Building Dashboard
 
-Frontend test case untuk Urbansolv. Aplikasi ini menampilkan monitoring sederhana untuk gedung pintar (smart building).
-
-## Fitur
-
-- Header: judul "Urbansolv Smart Building Dashboard" dan nama gedung (Gedung A).
-- KPI cards:
-  - Total konsumsi energi hari ini (kWh).
-  - Rata-rata suhu ruangan (°C).
-  - Rata-rata CO2 (ppm).
-- Tabel daftar ruangan:
-  - Kolom: Nama Ruang, Lantai, Suhu (°C), CO2 (ppm), Status.
-  - Badge warna status: hijau (Normal), kuning (Warning), merah (Alert).
-  - Dropdown filter lantai.
-- Grafik tren:
-  - Line chart konsumsi energi 24 jam terakhir menggunakan Recharts.
-- Data dummy diambil dari `lib/data.ts` (tanpa backend).
+Project ini adalah implementasi test case frontend Urbansolv untuk membangun halaman dashboard monitoring smart building menggunakan Next.js dan Tailwind CSS [file:3].
 
 ## Tech Stack
 
-- Next.js (App Router) + TypeScript.
-- Tailwind CSS untuk styling.
-- Recharts untuk grafik.
+- Next.js 14 (App Router)
+- React
+- Tailwind CSS
+- Recharts (grafik tren energi)
+- React Three Fiber & @react-three/drei (3D box sederhana untuk map)
 
-## Cara Menjalankan
+## Cara Menjalankan Aplikasi
 
-1. Clone repository ini.
-
+1. Clone repository ini atau download ZIP.
 2. Masuk ke folder frontend:
-cd frontend
 
-3. Install dependencies:
-npm install
+   ```
+   cd frontend
+   ```
 
-4. Jalankan aplikasi:
-npm run dev
+3. Install dependency:
 
-5. Buka `http://localhost:3000` di browser.
+   ```
+   npm install
+   ```
 
-## Fitur Opsional: 3D Map
+4. Jalankan development server:
 
-- Halaman `/map` yang menampilkan box 3D sederhana sebagai representasi gedung.
-- Dibangun dengan Three.js melalui @react-three/fiber dan @react-three/drei.
+   ```
+   npm run dev
+   ```
+
+5. Buka di browser:
+
+   - Dashboard: `http://localhost:3000`
+   - Halaman 3D Map: `http://localhost:3000/map`
+
+## Fitur Utama
+
+### 1. Smart Building Dashboard
+
+Halaman utama menampilkan:
+
+- Header dengan judul **"Urbansolv Smart Building Dashboard"** dan nama gedung (contoh: Gedung A) [file:3].
+- Tiga KPI cards:
+  - Total konsumsi energi hari ini (kWh).
+  - Rata-rata suhu ruangan (°C).
+  - Rata-rata CO₂ (ppm) / kualitas udara.
+- Tabel daftar ruangan:
+  - Kolom: Nama Ruang, Lantai, Suhu, CO₂, Status (Normal / Warning / Alert).
+  - Dropdown filter lantai, isi tabel menyesuaikan pilihan lantai.
+  - Badge warna untuk status (hijau, kuning, merah).
+- Grafik tren konsumsi energi 24 jam terakhir menggunakan Recharts [file:3].
+
+### 2. 3D Map View
+
+Halaman `/map` menampilkan:
+
+- Judul **"Urbansolv Smart Building - 3D View"**.
+- 3D box sederhana yang mewakili gedung dengan kontrol rotate/zoom menggunakan React Three Fiber.
+- Tombol untuk kembali ke dashboard utama [file:3].
+
+## Struktur Folder
+
+Struktur utama di dalam folder `frontend`:
+
+```
+frontend/
+├─ app/
+│  ├─ layout.js          # Root layout Next.js
+│  ├─ page.jsx           # Halaman dashboard utama
+│  └─ map/
+│     └─ page.jsx        # Halaman 3D map
+├─ components/
+│  ├─ KPICards.jsx       # Kartu ringkasan KPI
+│  ├─ RoomsTable.jsx     # Tabel daftar ruangan + filter lantai
+│  └─ EnergyChart.jsx    # Grafik tren konsumsi energi
+├─ lib/
+│  └─ data.js            # Dummy data building, rooms, energyTrend
+├─ public/
+│  ├─ dashboard.png      # Screenshot dashboard utama
+│  └─ map.png            # Screenshot halaman 3D map
+└─ README.md
+```
+
+## Screenshots
+
+Dashboard utama:
+
+![Dashboard](./public/dashboard.png)
+
+Halaman 3D Map:
+
+![3D Map](./public/map.png)
+```
