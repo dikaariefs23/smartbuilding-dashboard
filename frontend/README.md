@@ -1,6 +1,6 @@
 # Urbansolv Smart Building Dashboard
 
-Project ini adalah implementasi test case frontend Urbansolv untuk membangun halaman dashboard monitoring smart building menggunakan Next.js dan Tailwind CSS [file:3].
+Project ini adalah implementasi test case frontend Urbansolv untuk membangun halaman dashboard monitoring smart building menggunakan Next.js dan Tailwind CSS.
 
 ## Tech Stack
 
